@@ -1,298 +1,638 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-dim": "#131313",
-          "on-primary-fixed-variant": "#004f58",
-          "on-secondary-fixed-variant": "#39485a",
-          "on-tertiary-fixed": "#251a00",
-          "secondary-fixed-dim": "#b9c8de",
-          "on-primary-fixed": "#001f24",
-          "inverse-primary": "#006875",
-          "inverse-surface": "#e5e2e1",
-          "tertiary-fixed": "#ffdf96",
-          "on-surface": "#e5e2e1",
-          "surface-bright": "#393939",
-          "outline-variant": "#3b494c",
-          "primary-container": "#00e5ff",
-          "surface-variant": "#353534",
-          "on-secondary": "#233143",
-          "on-primary": "#00363d",
-          "surface-container-highest": "#353534",
-          "surface-tint": "#00daf3",
-          "error": "#ffb4ab",
-          "primary-fixed": "#9cf0ff",
-          "on-background": "#e5e2e1",
-          "on-error": "#690005",
-          "on-tertiary": "#3e2e00",
-          "secondary-container": "#39485a",
-          "primary": "#c3f5ff",
-          "surface-container-low": "#1c1b1b",
-          "surface-container-lowest": "#0e0e0e",
-          "on-secondary-fixed": "#0d1c2d",
-          "inverse-on-surface": "#313030",
-          "on-primary-container": "#00626e",
-          "primary-fixed-dim": "#00daf3",
-          "surface-container": "#201f1f",
-          "tertiary-fixed-dim": "#f3bf26",
-          "on-secondary-container": "#a7b6cc",
-          "on-tertiary-container": "#6f5500",
-          "surface": "#131313",
-          "tertiary": "#ffeac0",
-          "secondary": "#b9c8de",
-          "outline": "#849396",
-          "on-error-container": "#ffdad6",
-          "background": "#131313",
-          "surface-container-high": "#2a2a2a",
-          "tertiary-container": "#fec931",
-          "error-container": "#93000a",
-          "secondary-fixed": "#d4e4fa",
-          "on-tertiary-fixed-variant": "#594400",
-          "on-surface-variant": "#bac9cc",
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#004f58",
+              "on-secondary-fixed-variant": "#39485a",
+              "on-tertiary-fixed": "#251a00",
+              "secondary-fixed-dim": "#b9c8de",
+              "on-primary-fixed": "#001f24",
+              "inverse-primary": "#006875",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-fixed": "#ffdf96",
+              "on-surface": "#e5e2e1",
+              "surface-bright": "#393939",
+              "outline-variant": "#3b494c",
+              "primary-container": "#00e5ff",
+              "surface-variant": "#353534",
+              "on-secondary": "#233143",
+              "on-primary": "#00363d",
+              "surface-container-highest": "#353534",
+              "surface-tint": "#00daf3",
+              error: "#ffb4ab",
+              "primary-fixed": "#9cf0ff",
+              "on-background": "#e5e2e1",
+              "on-error": "#690005",
+              "on-tertiary": "#3e2e00",
+              "secondary-container": "#39485a",
+              primary: "#c3f5ff",
+              "surface-container-low": "#1c1b1b",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#0d1c2d",
+              "inverse-on-surface": "#313030",
+              "on-primary-container": "#00626e",
+              "primary-fixed-dim": "#00daf3",
+              "surface-container": "#201f1f",
+              "tertiary-fixed-dim": "#f3bf26",
+              "on-secondary-container": "#a7b6cc",
+              "on-tertiary-container": "#6f5500",
+              surface: "#131313",
+              tertiary: "#ffeac0",
+              secondary: "#b9c8de",
+              outline: "#849396",
+              "on-error-container": "#ffdad6",
+              background: "#131313",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-container": "#fec931",
+              "error-container": "#93000a",
+              "secondary-fixed": "#d4e4fa",
+              "on-tertiary-fixed-variant": "#594400",
+              "on-surface-variant": "#bac9cc",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Space Grotesk"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
         },
-        fontFamily: {
-          "headline": ["Space Grotesk"],
-          "body": ["Inter"],
-          "label": ["Space Grotesk"],
-        },
-        borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
-      },
-    },
-  }
-</script>
-<style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  .dot-grid-bg { background-image: radial-gradient(circle, #3b494c 1px, transparent 1px); background-size: 24px 24px; opacity: 0.05; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #131313; }
-  ::-webkit-scrollbar-thumb { background: #353534; border-radius: 10px; }
-  ::-webkit-scrollbar-thumb:hover { background: #c3f5ff; }
-</style>
-<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
-</head>
-<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
-
-<!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
-  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-    <a href="index.html" class="text-xl font-bold text-[#e5e2e1] tracking-[-0.02em] font-['Space_Grotesk'] uppercase">&lt;NABIL_SHAD /&gt;</a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95">Home</a>
-      <a href="projects.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 transition-all hover:scale-105 active:scale-95">Projects</a>
-      <a href="about.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95">About Me</a>
-    </div>
-    <button class="bg-[#201f1f] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] hover:bg-[#353534] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]">Resume</button>
-  </div>
-</nav>
-
-<main class="relative min-h-screen pt-32 pb-24 overflow-hidden">
-  <div class="absolute inset-0 dot-grid-bg pointer-events-none"></div>
-  <section class="max-w-[1440px] mx-auto px-12 relative z-10">
-
-    <!-- HEADER -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-      <div class="max-w-2xl">
-        <h1 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface">PROJECTS<span class="text-outline">.</span></h1>
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .dot-grid-bg {
+        background-image: radial-gradient(circle, #3b494c 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.05;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #131313;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #353534;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c3f5ff;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary"
+  >
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <a
+          href="index.html"
+          class="text-xl font-bold text-[#e5e2e1] tracking-[-0.02em] font-['Space_Grotesk'] uppercase"
+          >&lt;NABIL_SHAD /&gt;</a
+        >
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95"
+            >Home</a
+          >
+          <a
+            href="projects.html"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 transition-all hover:scale-105 active:scale-95"
+            >Projects</a
+          >
+          <a
+            href="about.html"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95"
+            >About Me</a
+          >
+        </div>
+        <button
+          class="bg-[#201f1f] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] hover:bg-[#353534] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+        >
+          Resume
+        </button>
       </div>
-    </div>
+    </nav>
 
-    <!-- FEATURED: Banking Management System -->
-    <div class="mb-20">
-      <div class="relative group cursor-pointer overflow-hidden rounded-lg bg-surface-container-low border border-outline-variant/10 p-1">
-        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
-          <div class="lg:w-2/3 relative aspect-video bg-surface-container-lowest rounded overflow-hidden flex items-center justify-center group-hover:bg-surface-container transition-colors duration-500">
-            <img alt="Featured Background" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale group-hover:opacity-50 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS7UZAhbBu1S8SSU-UaHOM2Dl-MucS2EyewjxJ5QfUBXD5scL9RpY2MwsxvS6crxiB3J8M3bEjEFrDwRpl1SlYKmL9taGbH8zz3aoWTz7VVRHBn-pD2qUERvXpDKMdb589S3-KVmIOqPNwnbhY_AGQJcxQg5H99v_JBbEDH1Eq5daLVdCgnqACq5ygq1Gkmz7_Ld0NSdhb5wGJAzlS2F2R_OuvbJXAcNGAoOB5bMJqiZdIBfd2u5CRGH8i7ZBEuuPyBFdRN-C9yEI"/>
-            <div class="relative z-20 flex flex-col items-center gap-4">
-              <div class="w-20 h-20 rounded-full border-2 border-primary/50 flex items-center justify-center bg-background/40 backdrop-blur-md group-hover:scale-110 group-hover:border-primary transition-all duration-500">
-                <span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings:'FILL' 1">play_arrow</span>
+    <main class="relative min-h-screen pt-32 pb-24 overflow-hidden">
+      <div class="absolute inset-0 dot-grid-bg pointer-events-none"></div>
+      <section class="max-w-[1440px] mx-auto px-12 relative z-10">
+        <!-- HEADER -->
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8"
+        >
+          <div class="max-w-2xl">
+            <h1
+              class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface"
+            >
+              PROJECTS<span class="text-outline">.</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- FEATURED: Banking Management System -->
+        <div class="mb-20">
+          <div
+            class="relative group cursor-pointer overflow-hidden rounded-lg bg-surface-container-low border border-outline-variant/10 p-1"
+          >
+            <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+              <div
+                class="lg:w-2/3 relative aspect-video bg-surface-container-lowest rounded overflow-hidden flex items-center justify-center group-hover:bg-surface-container transition-colors duration-500"
+              >
+                <img
+                  alt="Featured Background"
+                  class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale group-hover:opacity-50 group-hover:scale-105 transition-all duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS7UZAhbBu1S8SSU-UaHOM2Dl-MucS2EyewjxJ5QfUBXD5scL9RpY2MwsxvS6crxiB3J8M3bEjEFrDwRpl1SlYKmL9taGbH8zz3aoWTz7VVRHBn-pD2qUERvXpDKMdb589S3-KVmIOqPNwnbhY_AGQJcxQg5H99v_JBbEDH1Eq5daLVdCgnqACq5ygq1Gkmz7_Ld0NSdhb5wGJAzlS2F2R_OuvbJXAcNGAoOB5bMJqiZdIBfd2u5CRGH8i7ZBEuuPyBFdRN-C9yEI"
+                />
+                <div class="relative z-20 flex flex-col items-center gap-4">
+                  <div
+                    class="w-20 h-20 rounded-full border-2 border-primary/50 flex items-center justify-center bg-background/40 backdrop-blur-md group-hover:scale-110 group-hover:border-primary transition-all duration-500"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-4xl"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >play_arrow</span
+                    >
+                  </div>
+                  <span
+                    class="font-label text-[10px] tracking-[0.4em] text-primary/80 animate-pulse"
+                    >LIVE_STREAM</span
+                  >
+                </div>
+                <div class="absolute bottom-6 left-6 flex gap-3">
+                  <span
+                    class="bg-primary/10 backdrop-blur-md text-primary text-[10px] font-bold tracking-widest uppercase px-3 py-1 border border-primary/20"
+                    >SOFTWARE</span
+                  >
+                  <span
+                    class="bg-background/60 backdrop-blur-md text-on-surface-variant text-[10px] font-bold tracking-widest uppercase px-3 py-1 border border-outline-variant/30"
+                    >FINTECH</span
+                  >
+                </div>
               </div>
-              <span class="font-label text-[10px] tracking-[0.4em] text-primary/80 animate-pulse">LIVE_STREAM</span>
-            </div>
-            <div class="absolute bottom-6 left-6 flex gap-3">
-              <span class="bg-primary/10 backdrop-blur-md text-primary text-[10px] font-bold tracking-widest uppercase px-3 py-1 border border-primary/20">SOFTWARE</span>
-              <span class="bg-background/60 backdrop-blur-md text-on-surface-variant text-[10px] font-bold tracking-widest uppercase px-3 py-1 border border-outline-variant/30">FINTECH</span>
-            </div>
-          </div>
-          <div class="lg:w-1/3 flex flex-col justify-center px-4 py-8 lg:py-0">
-            <h2 class="font-headline text-4xl font-bold tracking-tighter mb-6 text-on-surface">Banking Management System</h2>
-            <p class="text-on-surface-variant font-body leading-relaxed mb-8">B-kash banking system written in C# using .NET. Supports fund transfers, withdrawals, transactions history and service purchases.</p>
-            <div class="space-y-4 mb-6">
-              <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
-                <span class="font-label text-[10px] text-outline uppercase tracking-widest">Stack</span>
-                <span class="font-label text-[10px] text-on-surface uppercase tracking-widest">C# / .NET</span>
+              <div
+                class="lg:w-1/3 flex flex-col justify-center px-4 py-8 lg:py-0"
+              >
+                <h2
+                  class="font-headline text-4xl font-bold tracking-tighter mb-6 text-on-surface"
+                >
+                  Banking Management System
+                </h2>
+                <p
+                  class="text-on-surface-variant font-body leading-relaxed mb-8"
+                >
+                  B-kash banking system written in C# using .NET. Uses Azure
+                  SQL. Supports fund transfers, withdrawals, transactions
+                  history and service purchases. Companies can sell their
+                  services to customers, which can be bought. Customers can take
+                  out loans as well.
+                </p>
+                <div class="space-y-4 mb-6">
+                  <div
+                    class="flex justify-between items-center border-b border-outline-variant/20 pb-2"
+                  >
+                    <span
+                      class="font-label text-[10px] text-outline uppercase tracking-widest"
+                      >Stack</span
+                    >
+                    <span
+                      class="font-label text-[10px] text-on-surface uppercase tracking-widest"
+                      >C# / .NET</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center border-b border-outline-variant/20 pb-2"
+                  >
+                    <span
+                      class="font-label text-[10px] text-outline uppercase tracking-widest"
+                      >Type</span
+                    >
+                    <span
+                      class="font-label text-[10px] text-on-surface uppercase tracking-widest"
+                      >Desktop App</span
+                    >
+                  </div>
+                </div>
+                <a
+                  href="https://github.com/gomiiie/banking_system"
+                  target="_blank"
+                  class="w-full flex items-center justify-between group/btn py-4 border border-outline-variant/30 px-6 hover:bg-primary hover:border-primary transition-all duration-300"
+                >
+                  <span
+                    class="font-label text-xs font-bold tracking-widest uppercase group-hover/btn:text-on-primary transition-colors"
+                    >View Project Code</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary group-hover/btn:text-on-primary transition-colors"
+                    >arrow_forward</span
+                  >
+                </a>
               </div>
-              <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
-                <span class="font-label text-[10px] text-outline uppercase tracking-widest">Type</span>
-                <span class="font-label text-[10px] text-on-surface uppercase tracking-widest">Desktop App</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECONDARY FEATURED: Bangla Voice Transcription -->
+        <div class="mb-32">
+          <div
+            class="relative group cursor-pointer overflow-hidden rounded bg-surface-container-low/40 border border-outline-variant/10 p-1 hover:bg-surface-container-low transition-colors duration-300"
+          >
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+              <div
+                class="md:w-1/2 relative aspect-[16/9] bg-surface-container-lowest rounded overflow-hidden"
+              >
+                <img
+                  alt="Bangla Voice Transcription"
+                  class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 transition-all duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN32wCBrC-KBatGA4vBiHGY2yo2FAswS4Infia85aytG-7bxY2lziEyv0s0eemhtvim7L3c_iUtSlbLD5KnVSWW9X7ouAS8g4dstURKg1pnlsKqzdObN-QQgIIiUc7btQ7tpZKwQLmseNfPid4L-oiP2i28JXAs28Ug76HnCbBZVbfrsG5wLNidlo-cLpZNwDLNeYm7YLpm3wtmaiSJpjGmAoyhgweYe_1-W9q57vui3A0dsbXATxU9jSBQnIpEVokVMxJuSAGsIM"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent"
+                ></div>
+                <div
+                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full border border-primary flex items-center justify-center bg-background/60 backdrop-blur-sm"
+                  >
+                    <span class="material-symbols-outlined text-primary text-xl"
+                      >visibility</span
+                    >
+                  </div>
+                </div>
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-background/80 backdrop-blur-md text-primary text-[9px] font-bold tracking-widest uppercase px-2 py-1 border border-primary/20"
+                    >ML</span
+                  >
+                  <span
+                    class="bg-background/80 backdrop-blur-md text-primary text-[9px] font-bold tracking-widest uppercase px-2 py-1 border border-primary/20"
+                    >PIPELINE</span
+                  >
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col justify-center py-4 pr-6">
+                <h3
+                  class="font-headline text-2xl font-bold tracking-tighter mb-4 text-on-surface group-hover:text-primary transition-colors"
+                >
+                  Bangla Voice Transcription
+                </h3>
+                <p
+                  class="text-on-surface-variant font-body text-sm leading-relaxed mb-6"
+                >
+                  Built a bangla voice transcription and diarization pipeline.
+                  It takes bangla audio as input. And outputs the transcribed
+                  text and speaker diarization (who spoke when). It achieves 81%
+                  and 88% accuracy, respectively and achieved a 300% improvement
+                  in processing time. This was created for the BUET DL
+                  competition.
+                </p>
+                <div class="flex gap-4 items-center">
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label text-[9px] text-outline uppercase tracking-widest"
+                      >Transcription Accuracy</span
+                    >
+                    <span
+                      class="font-label text-[10px] text-on-surface font-bold uppercase"
+                      >81%</span
+                    >
+                  </div>
+                  <div class="w-px h-6 bg-outline-variant/30"></div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label text-[9px] text-outline uppercase tracking-widest"
+                      >Diarization Accuracy</span
+                    >
+                    <span
+                      class="font-label text-[10px] text-on-surface font-bold uppercase"
+                      >88%</span
+                    >
+                  </div>
+                  <div class="w-px h-6 bg-outline-variant/30"></div>
+                  <div class="flex flex-col">
+                    <span
+                      class="font-label text-[9px] text-outline uppercase tracking-widest"
+                      >Time</span
+                    >
+                    <span
+                      class="font-label text-[10px] text-on-surface font-bold uppercase"
+                      >26 mins</span
+                    >
+                  </div>
+                  <div class="w-px h-6 bg-outline-variant/30"></div>
+                  <button
+                    class="flex items-center gap-2 font-label text-[10px] font-bold tracking-widest uppercase text-primary hover:text-on-surface transition-colors"
+                  >
+                    VIEW REPOSITORY
+                    <span class="material-symbols-outlined text-sm"
+                      >open_in_new</span
+                    >
+                  </button>
+                </div>
               </div>
             </div>
-            <button class="w-full flex items-center justify-between group/btn py-4 border border-outline-variant/30 px-6 hover:bg-primary hover:border-primary transition-all duration-300">
-              <span class="font-label text-xs font-bold tracking-widest uppercase group-hover/btn:text-on-primary transition-colors">View Project Code</span>
-              <span class="material-symbols-outlined text-primary group-hover/btn:text-on-primary transition-colors">arrow_forward</span>
-            </button>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- SECONDARY FEATURED: Bangla Voice Transcription -->
-    <div class="mb-32">
-      <div class="relative group cursor-pointer overflow-hidden rounded bg-surface-container-low/40 border border-outline-variant/10 p-1 hover:bg-surface-container-low transition-colors duration-300">
-        <div class="flex flex-col md:flex-row gap-8 items-center">
-          <div class="md:w-1/2 relative aspect-[16/9] bg-surface-container-lowest rounded overflow-hidden">
-            <img alt="Bangla Voice Transcription" class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN32wCBrC-KBatGA4vBiHGY2yo2FAswS4Infia85aytG-7bxY2lziEyv0s0eemhtvim7L3c_iUtSlbLD5KnVSWW9X7ouAS8g4dstURKg1pnlsKqzdObN-QQgIIiUc7btQ7tpZKwQLmseNfPid4L-oiP2i28JXAs28Ug76HnCbBZVbfrsG5wLNidlo-cLpZNwDLNeYm7YLpm3wtmaiSJpjGmAoyhgweYe_1-W9q57vui3A0dsbXATxU9jSBQnIpEVokVMxJuSAGsIM"/>
-            <div class="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent"></div>
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div class="w-12 h-12 rounded-full border border-primary flex items-center justify-center bg-background/60 backdrop-blur-sm">
-                <span class="material-symbols-outlined text-primary text-xl">visibility</span>
+        <!-- PROJECT GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Aquatic Bot -->
+          <article
+            class="group relative flex flex-col bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-500 overflow-hidden"
+          >
+            <div class="aspect-[4/3] overflow-hidden relative">
+              <img
+                alt="Aquatic Bot"
+                class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+                src="https://i.imgur.com/J56TDLC.png"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"
+              ></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="bg-primary text-on-primary font-label text-[9px] font-black tracking-[0.2em] uppercase px-3 py-1"
+                  >EMBEDDED</span
+                >
               </div>
             </div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="bg-background/80 backdrop-blur-md text-primary text-[9px] font-bold tracking-widest uppercase px-2 py-1 border border-primary/20">ML</span>
-              <span class="bg-background/80 backdrop-blur-md text-primary text-[9px] font-bold tracking-widest uppercase px-2 py-1 border border-primary/20">PIPELINE</span>
-            </div>
-          </div>
-          <div class="md:w-1/2 flex flex-col justify-center py-4 pr-6">
-            <h3 class="font-headline text-2xl font-bold tracking-tighter mb-4 text-on-surface group-hover:text-primary transition-colors">Bangla Voice Transcription</h3>
-            <p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">Built a bangla voice transcription and diarization pipeline, achieving 81% and 88% accuracy, with 300% improvement in processing time. Top 10% finalist at BUET DL Sprint 4.0.</p>
-            <div class="flex gap-4 items-center">
-              <div class="flex flex-col">
-                <span class="font-label text-[9px] text-outline uppercase tracking-widest">Accuracy</span>
-                <span class="font-label text-[10px] text-on-surface font-bold uppercase">81–88%</span>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3
+                class="font-headline text-2xl font-bold tracking-tighter mb-4 text-on-surface group-hover:text-primary transition-colors"
+              >
+                Aquatic Semi-Auto Bot
+              </h3>
+              <p
+                class="text-on-surface-variant font-body text-sm leading-relaxed mb-8 line-clamp-5"
+              >
+                A prototype that was made for the MAES course. Arduino-based
+                prototype controlled wirelessly to collect surface garbage over
+                water and transport it to land. A work in progress that has room
+                for improvement.
+              </p>
+              <div
+                class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center"
+              >
+                <span
+                  class="font-label text-[10px] text-outline uppercase tracking-widest"
+                  >Prototype</span
+                >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform"
+                  >call_made</span
+                >
               </div>
-              <div class="w-px h-6 bg-outline-variant/30"></div>
-              <button class="flex items-center gap-2 font-label text-[10px] font-bold tracking-widest uppercase text-primary hover:text-on-surface transition-colors">
-                VIEW_REPOSITORY <span class="material-symbols-outlined text-sm">open_in_new</span>
-              </button>
             </div>
-          </div>
+          </article>
+          <!-- Predictive Stock Modeler -->
+          <article
+            class="group relative flex flex-col bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-500 overflow-hidden"
+          >
+            <div class="aspect-[4/3] overflow-hidden relative">
+              <img
+                alt="Predictive Stock Modeler"
+                class="w-full h-full object-cover opacity-100 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
+                src="https://i.imgur.com/Ef2cl7A.jpeg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"
+              ></div>
+              <div class="absolute top-4 left-4">
+                <span
+                  class="bg-primary text-on-primary font-label text-[9px] font-black tracking-[0.2em] uppercase px-3 py-1"
+                  >ML</span
+                >
+              </div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3
+                class="font-headline text-2xl font-bold tracking-tighter mb-4 text-on-surface group-hover:text-primary transition-colors"
+              >
+                Heart Disease Predictor
+              </h3>
+              <p
+                class="text-on-surface-variant font-body text-sm leading-relaxed mb-8 line-clamp-6"
+              >
+                Predicts (yes/no) on whether the patient has heart disease or
+                not based on: Age, Gender, Blood Pressure, Heart Rate, Chest
+                Pain, BMI, Smoking. The model uses the K-neart neighbours
+                algorithm. 87.54% accuracy
+              </p>
+              <div
+                class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center"
+              >
+                <span
+                  class="font-label text-[10px] text-outline uppercase tracking-widest"
+                  >Complete</span
+                >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform"
+                  >call_made</span
+                >
+              </div>
+            </div>
+          </article>
+          <!-- Placeholder slot -->
+          <article
+            class="group relative flex flex-col bg-surface-container-low border border-dashed border-outline-variant/20 hover:border-primary/30 transition-all duration-500 overflow-hidden"
+          >
+            <div
+              class="aspect-[4/3] flex items-center justify-center bg-surface-container-lowest/50"
+            >
+              <span class="material-symbols-outlined text-outline/30 text-6xl"
+                >add_circle</span
+              >
+            </div>
+            <div
+              class="p-8 flex flex-col flex-grow items-center justify-center text-center"
+            >
+              <h3
+                class="font-headline text-lg font-bold tracking-tighter mb-2 text-outline uppercase"
+              >
+                More Coming Soon
+              </h3>
+              <p class="text-on-surface-variant/50 font-body text-sm">
+                Next project in progress...
+              </p>
+            </div>
+          </article>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
-    <!-- PROJECT GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Aquatic Bot -->
-      <article class="group relative flex flex-col bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-500 overflow-hidden">
-        <div class="aspect-[4/3] overflow-hidden relative">
-          <img alt="Aquatic Bot" class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzh6E7UDrkSVqyXQPJjWA1AUy5yete1PqYv2cWRN8an4JlNpxrRQtk625aKRBTag9bSkemh8Qk8MA99ojp50LvOhrUV_80Zqr2Wop04BjV9VFf6YRn3igYNSnI9hojSgmxcFXHrA9XeBq-Gi2gWLYhU6bdHDpEQBdZ9DeRImN2VjQRmfBjXt6jz5uDpc0E4ec0zrBSlBHx56jcyxUgduovzm4lp5TFc4"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-          <div class="absolute top-4 left-4">
-            <span class="bg-primary text-on-primary font-label text-[9px] font-black tracking-[0.2em] uppercase px-3 py-1">EMBEDDED</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-grow">
-          <h3 class="font-headline text-2xl font-bold tracking-tighter mb-4 text-on-surface group-hover:text-primary transition-colors">Aquatic Semi-Automatic Bot</h3>
-          <p class="text-on-surface-variant font-body text-sm leading-relaxed mb-8 line-clamp-3">Arduino-based prototype controlled wirelessly to collect surface garbage over water and transport it to land.</p>
-          <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
-            <span class="font-label text-[10px] text-outline uppercase tracking-widest">HARDWARE_FINAL</span>
-            <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">call_made</span>
-          </div>
-        </div>
-      </article>
-      <!-- Predictive Stock Modeler -->
-      <article class="group relative flex flex-col bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-500 overflow-hidden">
-        <div class="aspect-[4/3] overflow-hidden relative">
-          <img alt="Predictive Stock Modeler" class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFMoLkfJIQvKwTr6BuU3bai0wwF2fdBwEfAf8ta9_NYDqRPU5hURGpIRBbUHoU8VVDM4zA0d6rWd4pOT6fbvNqtFY0j85pJhghRmY4oqCdJtKGWANd7IoJ33SMhWNu5Nj-KCgqz-NuYqRWWwEw5WTnMqi8QOR8NFcxBP1goi0EucwHn-U0T8pYVztBkuCfkQ0DpVKCjcwwRgN-MitaoSYxBMtbPP5mveVmMawl1CoA2SmvutQ-Fb1jTSmarADQgFjDvQqaISsYEsg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
-          <div class="absolute top-4 left-4">
-            <span class="bg-primary text-on-primary font-label text-[9px] font-black tracking-[0.2em] uppercase px-3 py-1">DATA SCIENCE</span>
-          </div>
-        </div>
-        <div class="p-8 flex flex-col flex-grow">
-          <h3 class="font-headline text-2xl font-bold tracking-tighter mb-4 text-on-surface group-hover:text-primary transition-colors">Predictive Stock Modeler</h3>
-          <p class="text-on-surface-variant font-body text-sm leading-relaxed mb-8 line-clamp-3">Time-series forecasting model utilizing LSTM networks and sentiment analysis clusters to anticipate market volatility with 88% accuracy.</p>
-          <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
-            <span class="font-label text-[10px] text-outline uppercase tracking-widest">DATA_SET_v9</span>
-            <span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">call_made</span>
-          </div>
-        </div>
-      </article>
-      <!-- Placeholder slot -->
-      <article class="group relative flex flex-col bg-surface-container-low border border-dashed border-outline-variant/20 hover:border-primary/30 transition-all duration-500 overflow-hidden">
-        <div class="aspect-[4/3] flex items-center justify-center bg-surface-container-lowest/50">
-          <span class="material-symbols-outlined text-outline/30 text-6xl">add_circle</span>
-        </div>
-        <div class="p-8 flex flex-col flex-grow items-center justify-center text-center">
-          <h3 class="font-headline text-lg font-bold tracking-tighter mb-2 text-outline uppercase">More Coming Soon</h3>
-          <p class="text-on-surface-variant/50 font-body text-sm">Next project in progress...</p>
-        </div>
-      </article>
-    </div>
-
-  </section>
-</main>
-
-<!-- SHARED FOOTER -->
-<footer id="contact" class="bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10">
-  <div class="max-w-7xl mx-auto px-8">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-      <div class="flex flex-col gap-8 md:col-start-3 md:col-span-5">
-        <div class="text-2xl font-bold text-on-surface tracking-tighter font-headline uppercase">&lt;NABIL_SHAD /&gt;</div>
-        <div class="flex flex-col gap-5 pt-2">
-          <a class="flex items-center gap-4 group transition-all" href="https://github.com/gomiiie">
-            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
-              <i class="devicon-github-original text-xl opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all"></i>
+    <!-- SHARED FOOTER -->
+    <footer
+      id="contact"
+      class="bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10"
+    >
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div class="flex flex-col gap-8 md:col-start-3 md:col-span-5">
+            <div
+              class="text-2xl font-bold text-on-surface tracking-tighter font-headline uppercase"
+            >
+              &lt;NABIL_SHAD /&gt;
             </div>
-            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">github.com/gomiiie</span>
-          </a>
-          <a class="flex items-center gap-4 group transition-all" href="https://linkedin.com/in/grandoorlf">
-            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
-              <i class="devicon-linkedin-plain colored text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+            <div class="flex flex-col gap-5 pt-2">
+              <a
+                class="flex items-center gap-4 group transition-all"
+                href="https://github.com/gomiiie"
+              >
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors"
+                >
+                  <i
+                    class="devicon-github-original text-xl opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all"
+                  ></i>
+                </div>
+                <span
+                  class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors"
+                  >github.com/gomiiie</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-4 group transition-all"
+                href="https://linkedin.com/in/grandoorlf"
+              >
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors"
+                >
+                  <i
+                    class="devicon-linkedin-plain colored text-xl opacity-80 group-hover:opacity-100 transition-all"
+                  ></i>
+                </div>
+                <span
+                  class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors"
+                  >linkedin.com/grandoorlf</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-4 group transition-all"
+                href="https://kaggle.com/gomiie"
+              >
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors"
+                >
+                  <i
+                    class="devicon-kaggle-original colored text-xl opacity-80 group-hover:opacity-100 transition-all"
+                  ></i>
+                </div>
+                <span
+                  class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors"
+                  >kaggle.com/gomiie</span
+                >
+              </a>
             </div>
-            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">linkedin.com/grandoorlf</span>
-          </a>
-          <a class="flex items-center gap-4 group transition-all" href="https://kaggle.com/gomiie">
-            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
-              <i class="devicon-kaggle-original colored text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+          </div>
+          <div
+            class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pl-4"
+          >
+            <div class="space-y-4">
+              <h4
+                class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary"
+              >
+                Communication
+              </h4>
+              <div class="space-y-3">
+                <a
+                  class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm"
+                  href="mailto:nyeowneko@gmail.com"
+                >
+                  <span class="material-symbols-outlined text-sm">mail</span>
+                  nyeowneko@gmail.com
+                </a>
+                <div
+                  class="flex items-center gap-3 text-on-surface-variant text-sm"
+                >
+                  <span class="material-symbols-outlined text-sm">call</span>
+                  +1 555-0123
+                </div>
+              </div>
             </div>
-            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">kaggle.com/gomiie</span>
-          </a>
+            <div class="space-y-4">
+              <h4
+                class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary"
+              >
+                Location
+              </h4>
+              <div
+                class="flex items-start gap-3 text-on-surface-variant text-sm"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >location_on</span
+                >
+                <span
+                  >Dhaka, Bangladesh<br /><span
+                    class="text-[10px] opacity-60 uppercase"
+                    >Active Worldwide</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant/20"
+        >
+          <div
+            class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant"
+          >
+            © 2024 NABIL SHAD RAHMAN. ALL RIGHTS RESERVED.
+          </div>
+          <div class="flex gap-6">
+            <a
+              class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Terms of Service</a
+            >
+          </div>
         </div>
       </div>
-      <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pl-4">
-        <div class="space-y-4">
-          <h4 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary">Communication</h4>
-          <div class="space-y-3">
-            <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm" href="mailto:nyeowneko@gmail.com">
-              <span class="material-symbols-outlined text-sm">mail</span>
-              nyeowneko@gmail.com
-            </a>
-            <div class="flex items-center gap-3 text-on-surface-variant text-sm">
-              <span class="material-symbols-outlined text-sm">call</span>
-              +1 555-0123
-            </div>
-          </div>
-        </div>
-        <div class="space-y-4">
-          <h4 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary">Location</h4>
-          <div class="flex items-start gap-3 text-on-surface-variant text-sm">
-            <span class="material-symbols-outlined text-sm">location_on</span>
-            <span>Dhaka, Bangladesh<br/><span class="text-[10px] opacity-60 uppercase">Active Worldwide</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant/20">
-      <div class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">© 2024 NABIL SHAD RAHMAN. ALL RIGHTS RESERVED.</div>
-      <div class="flex gap-6">
-        <a class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-        <a class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
-</body>
+    </footer>
+  </body>
 </html>

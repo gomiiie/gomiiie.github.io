@@ -1,371 +1,857 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-dim": "#131313",
-          "on-primary-fixed-variant": "#004f58",
-          "on-secondary-fixed-variant": "#39485a",
-          "on-tertiary-fixed": "#251a00",
-          "secondary-fixed-dim": "#b9c8de",
-          "on-primary-fixed": "#001f24",
-          "inverse-primary": "#006875",
-          "inverse-surface": "#e5e2e1",
-          "tertiary-fixed": "#ffdf96",
-          "on-surface": "#e5e2e1",
-          "surface-bright": "#393939",
-          "outline-variant": "#3b494c",
-          "primary-container": "#00e5ff",
-          "surface-variant": "#353534",
-          "on-secondary": "#233143",
-          "on-primary": "#00363d",
-          "surface-container-highest": "#353534",
-          "surface-tint": "#00daf3",
-          "error": "#ffb4ab",
-          "primary-fixed": "#9cf0ff",
-          "on-background": "#e5e2e1",
-          "on-error": "#690005",
-          "on-tertiary": "#3e2e00",
-          "secondary-container": "#39485a",
-          "primary": "#c3f5ff",
-          "surface-container-low": "#1c1b1b",
-          "surface-container-lowest": "#0e0e0e",
-          "on-secondary-fixed": "#0d1c2d",
-          "inverse-on-surface": "#313030",
-          "on-primary-container": "#00626e",
-          "primary-fixed-dim": "#00daf3",
-          "surface-container": "#201f1f",
-          "tertiary-fixed-dim": "#f3bf26",
-          "on-secondary-container": "#a7b6cc",
-          "on-tertiary-container": "#6f5500",
-          "surface": "#131313",
-          "tertiary": "#ffeac0",
-          "secondary": "#b9c8de",
-          "outline": "#849396",
-          "on-error-container": "#ffdad6",
-          "background": "#131313",
-          "surface-container-high": "#2a2a2a",
-          "tertiary-container": "#fec931",
-          "error-container": "#93000a",
-          "secondary-fixed": "#d4e4fa",
-          "on-tertiary-fixed-variant": "#594400",
-          "on-surface-variant": "#bac9cc",
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#004f58",
+              "on-secondary-fixed-variant": "#39485a",
+              "on-tertiary-fixed": "#251a00",
+              "secondary-fixed-dim": "#b9c8de",
+              "on-primary-fixed": "#001f24",
+              "inverse-primary": "#006875",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-fixed": "#ffdf96",
+              "on-surface": "#e5e2e1",
+              "surface-bright": "#393939",
+              "outline-variant": "#3b494c",
+              "primary-container": "#00e5ff",
+              "surface-variant": "#353534",
+              "on-secondary": "#233143",
+              "on-primary": "#00363d",
+              "surface-container-highest": "#353534",
+              "surface-tint": "#00daf3",
+              error: "#ffb4ab",
+              "primary-fixed": "#9cf0ff",
+              "on-background": "#e5e2e1",
+              "on-error": "#690005",
+              "on-tertiary": "#3e2e00",
+              "secondary-container": "#39485a",
+              primary: "#c3f5ff",
+              "surface-container-low": "#1c1b1b",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#0d1c2d",
+              "inverse-on-surface": "#313030",
+              "on-primary-container": "#00626e",
+              "primary-fixed-dim": "#00daf3",
+              "surface-container": "#201f1f",
+              "tertiary-fixed-dim": "#f3bf26",
+              "on-secondary-container": "#a7b6cc",
+              "on-tertiary-container": "#6f5500",
+              surface: "#131313",
+              tertiary: "#ffeac0",
+              secondary: "#b9c8de",
+              outline: "#849396",
+              "on-error-container": "#ffdad6",
+              background: "#131313",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-container": "#fec931",
+              "error-container": "#93000a",
+              "secondary-fixed": "#d4e4fa",
+              "on-tertiary-fixed-variant": "#594400",
+              "on-surface-variant": "#bac9cc",
+            },
+            fontFamily: {
+              headline: ["Space Grotesk"],
+              body: ["Inter"],
+              label: ["Space Grotesk"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+          },
         },
-        fontFamily: {
-          "headline": ["Space Grotesk"],
-          "body": ["Inter"],
-          "label": ["Space Grotesk"],
-        },
-        borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
-      },
-    },
-  }
-</script>
-<style>
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-  .dot-grid { background-image: radial-gradient(circle, #3b494c 1px, transparent 1px); background-size: 24px 24px; opacity: 0.05; }
-</style>
-<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
-</head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .dot-grid {
+        background-image: radial-gradient(circle, #3b494c 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.05;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+      <div
+        class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
+      >
+        <a
+          href="index.html"
+          class="text-xl font-bold text-[#e5e2e1] tracking-[-0.02em] font-['Space_Grotesk'] uppercase"
+          >&lt;NABIL_SHAD /&gt;</a
+        >
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 transition-all hover:scale-105 active:scale-95"
+            >Home</a
+          >
+          <a
+            href="projects.html"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95"
+            >Projects</a
+          >
+          <a
+            href="about.html"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95"
+            >About Me</a
+          >
+        </div>
+        <button
+          class="bg-[#201f1f] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] hover:bg-[#353534] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+        >
+          Resume
+        </button>
+      </div>
+    </nav>
 
-<!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
-  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-    <a href="index.html" class="text-xl font-bold text-[#e5e2e1] tracking-[-0.02em] font-['Space_Grotesk'] uppercase">&lt;NABIL_SHAD /&gt;</a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 transition-all hover:scale-105 active:scale-95">Home</a>
-      <a href="projects.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95">Projects</a>
-      <a href="about.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95">About Me</a>
-    </div>
-    <button class="bg-[#201f1f] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] hover:bg-[#353534] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]">Resume</button>
-  </div>
-</nav>
+    <main class="relative pt-8">
+      <div class="fixed inset-0 dot-grid pointer-events-none z-0"></div>
 
-<main class="relative pt-8">
-  <div class="fixed inset-0 dot-grid pointer-events-none z-0"></div>
+      <!-- HERO -->
+      <section
+        class="relative min-h-[921px] flex flex-col justify-center px-8 lg:px-24 overflow-hidden"
+      >
+        <div
+          class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        >
+          <div class="lg:col-span-7 z-10">
+            <div class="mb-6 flex items-center gap-4">
+              <span
+                class="font-label text-xs tracking-[0.3em] text-primary uppercase bg-primary/10 px-3 py-1"
+                >Computer Science Student &amp; ML Enthusiast</span
+              >
+              <div class="h-[1px] w-12 bg-outline-variant/30"></div>
+            </div>
+            <h1
+              class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8"
+            >
+              NABIL<br />
+              <span class="text-primary italic">SHAD</span>
+            </h1>
+            <div class="max-w-xl space-y-6">
+              <div
+                class="text-on-surface-variant text-lg leading-relaxed space-y-3"
+              >
+                <div>
+                  A computer science student with a deep passion for maths, I
+                  specialise in
+                  <span class="text-[#e5e2e1] font-semibold underline"
+                    >Statistical Modelling</span
+                  >,
+                  <span class="text-[#e5e2e1] font-semibold underline"
+                    >Backend Development</span
+                  >
+                  and
+                  <span class="text-[#e5e2e1] font-semibold underline"
+                    >Machine Learning</span
+                  >.
+                </div>
+                <div>
+                  I enjoy building automated systems with practical
+                  applications. Take a look at my work, and feel free to reach
+                  out!
+                </div>
+              </div>
+              <div class="pt-8 flex flex-wrap gap-4">
+                <a
+                  href="projects.html"
+                  class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 text-sm transition-all hover:bg-primary-fixed-dim active:scale-95 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] hover:-translate-y-0.5"
+                  >View My WORK</a
+                >
+                <a
+                  href="#contact"
+                  class="border border-outline-variant/40 text-primary font-headline font-bold uppercase tracking-widest px-8 py-4 text-sm transition-all hover:bg-surface-container active:scale-95 hover:border-primary hover:text-primary"
+                  >Get in TOUch</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 hidden lg:block relative">
+            <div class="relative group animate-pulse">
+              <div
+                class="absolute -inset-0.5 bg-primary/20 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"
+              ></div>
+              <div
+                class="w-full h-full border border-dashed border-outline-variant/40 flex items-center justify-center"
+              >
+                <!-- Start Code Block -->
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap"
+                  rel="stylesheet"
+                />
+                <div
+                  style="
+                    background: #0d1117;
+                    border: 1px solid #30363d;
+                    border-radius: 10px;
+                    padding: 18px 22px;
+                    width: 100%;
+                    max-width: 320px;
+                    font-family: &quot;Fira Code&quot;, monospace;
+                    font-size: 11.5px;
+                    line-height: 1.8;
+                  "
+                >
+                  <div style="display: flex; gap: 6px; margin-bottom: 16px">
+                    <span
+                      style="
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #ff5f57;
+                        display: inline-block;
+                      "
+                    ></span>
+                    <span
+                      style="
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #febc2e;
+                        display: inline-block;
+                      "
+                    ></span>
+                    <span
+                      style="
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #28c840;
+                        display: inline-block;
+                      "
+                    ></span>
+                  </div>
 
-  <!-- HERO -->
-  <section class="relative min-h-[921px] flex flex-col justify-center px-8 lg:px-24 overflow-hidden">
-    <div class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-7 z-10">
-        <div class="mb-6 flex items-center gap-4">
-          <span class="font-label text-xs tracking-[0.3em] text-primary uppercase bg-primary/10 px-3 py-1">Computer Science Student &amp; ML Enthusiast</span>
-          <div class="h-[1px] w-12 bg-outline-variant/30"></div>
-        </div>
-        <h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
-          NABIL<br/>
-          <span class="text-primary italic">SHAD</span>
-        </h1>
-        <div class="max-w-xl space-y-6">
-          <div class="text-on-surface-variant text-lg leading-relaxed space-y-3">
-            <div>A computer science student with a deep passion for maths, I specialise in <span class="text-[#e5e2e1] font-semibold underline">Statistical Modelling</span>, <span class="text-[#e5e2e1] font-semibold underline">Backend Development</span> and <span class="text-[#e5e2e1] font-semibold underline">Machine Learning</span>.</div>
-            <div>I enjoy building automated systems with practical applications. Take a look at my work, and feel free to reach out!</div>
-          </div>
-          <div class="pt-8 flex flex-wrap gap-4">
-            <a href="projects.html" class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 text-sm transition-all hover:bg-primary-fixed-dim active:scale-95 hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] hover:-translate-y-0.5">View My WORK</a>
-            <a href="#contact" class="border border-outline-variant/40 text-primary font-headline font-bold uppercase tracking-widest px-8 py-4 text-sm transition-all hover:bg-surface-container active:scale-95 hover:border-primary hover:text-primary">Get in TOUch</a>
-          </div>
-        </div>
-      </div>
-      <div class="lg:col-span-5 hidden lg:block relative">
-        <div class="relative group animate-pulse">
-          <div class="absolute -inset-0.5 bg-primary/20 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-          <div class="relative aspect-square w-full bg-[#1c1b1b] rounded-xl border border-outline-variant/20 shadow-2xl overflow-hidden flex flex-col">
-            <div class="bg-surface-container p-3 border-b border-outline-variant/10 flex items-center gap-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-error/40"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-tertiary/40"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-primary-container/40"></div>
-            </div>
-            <div class="flex-grow flex items-center justify-center p-8">
-              <div class="w-full h-full border border-dashed border-outline-variant/40 flex items-center justify-center text-on-surface-variant font-label text-xs uppercase tracking-widest"><span class="animate-bounce mr-2">&gt;</span> READY_FOR_DEPLOYMENT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                  <div>
+                    <span style="color: #ff7b72">class</span>
+                    <span style="color: #79c0ff"> MLEngineer</span>
+                    <span style="color: #e6edf3">:</span>
+                  </div>
 
-  <!-- TOOLBOX -->
-  <section class="py-24 px-8 lg:px-24 bg-surface-container-low border-y border-outline-variant/10">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <h2 class="font-headline text-3xl font-bold tracking-tight uppercase">Toolbox</h2>
-        <div class="h-1 w-16 bg-primary mt-2"></div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-outline-variant/20">
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <i class="devicon-python-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"></i>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">Python</span>
-        </div>
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <i class="devicon-cplusplus-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"></i>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">C++</span>
-        </div>
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <i class="devicon-tensorflow-original text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"></i>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">TensorFlow</span>
-        </div>
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <i class="devicon-pytorch-original text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"></i>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">PyTorch</span>
-        </div>
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors">database</span>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">SQL</span>
-        </div>
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <i class="devicon-scikitlearn-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"></i>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">SciKit Learn</span>
-        </div>
-        <div class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10">
-          <i class="devicon-pandas-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"></i>
-          <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary">Pandas</span>
-        </div>
-      </div>
-    </div>
-  </section>
+                  <div style="padding-left: 16px">
+                    <span style="color: #ff7b72">def</span>
+                    <span style="color: #d2a8ff"> __init__</span>
+                    <span style="color: #e6edf3">(self):</span>
+                  </div>
 
-  <!-- ACHIEVEMENTS -->
-  <section class="py-24 px-8 lg:px-24 bg-surface-container-lowest">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-12">
-        <h2 class="font-headline text-3xl font-bold tracking-tight uppercase">Achievements</h2>
-        <div class="h-1 w-16 bg-primary mt-2"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-surface-container-low border border-outline-variant/10 p-0 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer">
-          <div class="h-48 overflow-hidden bg-surface-dim relative">
-            <img alt="USAMTS Medal" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0J0_OIb8O-eoz6FkxfTpvB1NFw-Bg3e98t6PUd6cDNOHu702Ymqq1fELwCoVBR-tHug7fFSxN5tWXTMf6m6cMw2pKbb2HSHdUH2f5-VAMybyC4AjiV8w5GjNJrcCInYnm4g8KX13W0fH2CjPIBXEDHiSLQMJJxfYMsGZMoGSEY-6b8-6hoTPS1v0VeNAcrmY7TPuPfpHVp7EvqD7iHsEKojA1qTGVkRiWO2XQ5L4ppvtqS8xCjh_STRGWghU79WZtyht5Aly6-2Q"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/60 to-transparent"></div>
-            <div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm px-2 py-1 border border-primary/30">
-              <span class="font-label text-[10px] text-primary uppercase tracking-widest">AWARDS</span>
-            </div>
-          </div>
-          <div class="p-6 pt-2">
-            <h3 class="font-headline font-bold text-lg mb-2 uppercase">Math olympiad FINALIST</h3>
-            <div class="text-on-surface-variant text-sm mb-4">Qualified as a national-level finalist in the Bangladesh Mathematical Olympiad, competing among the country's top mathematics students.</div>
-            <div class="text-primary font-label text-[10px] uppercase tracking-widest">National Level | March 2022</div>
-          </div>
-        </div>
-        <div class="bg-surface-container-low border border-outline-variant/10 p-0 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer">
-          <div class="h-48 overflow-hidden bg-surface-dim relative">
-            <img alt="Math Competition Trophy" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7KgyS5fwSvYSYdyGG0umsbVQZ5DAkRMskHs8sQEM-UZnjY_JxJsqFl5tlQ8vYyUopEeQDRpOWReWM9Kz8MlraaMV76EysOJoiFU3osFRbQTpe6yL5u6rOJGL3GgKiaYfxpRzruRTyskECfVcq6zf3aeelJG6UuKGS-wTpQ1LDmutTYi1B0Q5bSN-c56N8SfRs5n_uJ1Hub5I762L5QblIVcJiOzRp69UWZWe27iP5h1wbJbA1VH3H63BpmK_LFuZU2Uot05cgUmQ"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/60 to-transparent"></div>
-            <div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm px-2 py-1 border border-primary/30">
-              <span class="font-label text-[10px] text-primary uppercase tracking-widest">COMPETITION</span>
-            </div>
-          </div>
-          <div class="p-6 pt-2">
-            <h3 class="font-headline font-bold text-lg mb-2 uppercase">DL Sprint 4.0 Finalist BUET</h3>
-            <div class="text-on-surface-variant text-sm mb-4">Secured a <b><u>top 10%</u></b> ranking in the <b><u>finals</u></b> amongst 200 countrywide teams in BUET's Deep Learning competition. Our pipelines achieved <b><u>81%</u></b> and <b><u>88%</u></b> accuracy.</div>
-            <div class="text-primary font-label text-[10px] uppercase tracking-widest">NATIONAL LEVEL | MARCH 2026</div>
-          </div>
-        </div>
-        <div class="bg-surface-container-low border border-outline-variant/10 p-0 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer">
-          <div class="h-48 overflow-hidden bg-surface-dim relative">
-            <img alt="Seal of Achievement" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASnt5f-L0FsJT0FfqcmvMnXHBXJrCzemyKR7H6h_vEJCKanzHwNLzQOZwWtaVzl8JiH8_x99tAQMBueKcVml-7yF7rohqywtUSG6ROKZ0OoY810rfjZ_YWfbGuwP5mC8qmzoIpHmFYpvw5xK8CTAJUnmuWf13zCZG-lfi5P5SLXHQCBXTUOJfXEFhBTmpKU6uZmmdxuHC-eHqHhP_dsCHO7Jsa9jX0FEN-_EZNREKX1GkKCavl8sWIe6WyV9ib3202AIlMvNLipC8"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/60 to-transparent"></div>
-            <div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm px-2 py-1 border border-primary/30">
-              <span class="font-label text-[10px] text-primary uppercase tracking-widest">ACADEMIC</span>
-            </div>
-          </div>
-          <div class="p-6 pt-2">
-            <h3 class="font-headline font-bold text-lg mb-2 uppercase">Daily Star Award</h3>
-            <div class="text-on-surface-variant text-sm mb-4">Recognized by The Daily Star for outstanding O Level (IGCSE) and A Level (IAL) examination results.</div>
-            <div class="text-primary font-label text-[10px] uppercase tracking-widest">HIGHSCHOOL | OCTOBER 2022</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                  <div style="padding-left: 32px">
+                    <span style="color: #e6edf3">self.name = </span>
+                    <span style="color: #a5d6ff">"Nabil Shad"</span>
+                  </div>
 
-  <!-- PROJECTS -->
-  <section class="py-24 px-8 lg:px-24">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex justify-between items-end mb-12">
-        <div>
-          <h2 class="font-headline text-3xl font-bold tracking-tight uppercase">Projects</h2>
-          <div class="h-1 w-16 bg-primary mt-2"></div>
-        </div>
-        <a href="projects.html" class="font-label text-xs text-primary uppercase tracking-widest border-b border-primary pb-1 hover:opacity-70 transition-opacity">View Portfolio</a>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-surface-container-low border border-outline-variant/10 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer duration-300">
-          <div class="h-48 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative">
-            <img alt="Kernel OS Code" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZnyC1D1zHbB6dDAbTCVFBb4U6cyyYQD3d2jHQZnB1DVoh98YrXHZ9igDV53fDsKxNtGfvbaEWN2hNMPD1Q0_-h8DmIJMzZ4tTqmX4zyhmSAylzlSA9SYowsO7sWuAX-taR01e60kXjG58KLvtB6yYE3yZI5iXrh9TjmOPxAz40cSMaDQUN3hJkhtYG6ilB8HqgJmm-qGF3lfiKoRlG46nryLNRNOqhjsXFyQTSpxIvKB6vvC6MxWbEgIuISAHJA7QCrYKHgAl7ys"/>
-            <div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <span class="material-symbols-outlined text-primary text-3xl">data_object</span>
-              <span class="font-label text-[10px] bg-primary text-on-primary px-3 py-1 font-bold border border-primary/20 tracking-widest shadow-[4px_4px_0px_0px_rgba(0,229,255,0.2)]">SOFTWARE</span>
-            </div>
-            <h3 class="font-headline font-bold text-lg mb-2 uppercase">Banking MANAGEMENT SYSTEM</h3>
-            <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">B-kash banking system written in C# using .NET. Supports fund transfers, withdrawals, transactions history and service purchases.</p>
-            <div class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all">Explore <span class="material-symbols-outlined text-xs">arrow_forward</span></div>
-          </div>
-        </div>
-        <div class="bg-surface-container-low border border-outline-variant/10 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer duration-300">
-          <div class="h-48 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative">
-            <img alt="Computer Vision Neural Net" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN32wCBrC-KBatGA4vBiHGY2yo2FAswS4Infia85aytG-7bxY2lziEyv0s0eemhtvim7L3c_iUtSlbLD5KnVSWW9X7ouAS8g4dstURKg1pnlsKqzdObN-QQgIIiUc7btQ7tpZKwQLmseNfPid4L-oiP2i28JXAs28Ug76HnCbBZVbfrsG5wLNidlo-cLpZNwDLNeYm7YLpm3wtmaiSJpjGmAoyhgweYe_1-W9q57vui3A0dsbXATxU9jSBQnIpEVokVMxJuSAGsIM"/>
-            <div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
-              <span class="font-label text-[10px] bg-primary text-on-primary px-3 py-1 font-bold border border-primary/20 tracking-widest shadow-[4px_4px_0px_0px_rgba(0,229,255,0.2)]">MACHINE LEARNING</span>
-            </div>
-            <h3 class="font-headline font-bold text-lg mb-2 uppercase">Bangla VOICE TRANSCRIPTIOn</h3>
-            <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Built a bangla voice transcription and diarization pipeline, achieving 81 and 88% accuracy, with 300% improvement in processing time.</p>
-            <div class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all">Explore <span class="material-symbols-outlined text-xs">arrow_forward</span></div>
-          </div>
-        </div>
-        <div class="bg-surface-container-low border border-outline-variant/10 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer duration-300">
-          <div class="h-48 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative">
-            <img alt="FPGA Hardware Board" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwQdC6GJDISq2mzCzQnrgknWnIMDjnrhaXlpPs4v6uW59K0kQgQmBWZ-Pb4zP_vOd-rVms4NDE0cqhKS0mZZnWDybJLts-jbFwUbowVs7c2zL0oCS-GaSp8NGGq5x8CiLzgioArwp84n6WLQ2bYeADCG2EYxXDab0RNDjQMhR3gNGn7lNiSMwjxUuNoNys9qALj_Ka90jz_HEG1hUukMvBuA5FZovVmDol6cYnLDfq0fnUqyHy0loLSIN5UBDo1Zv7LVRGNP-i4A0"/>
-            <div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
-          </div>
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <span class="material-symbols-outlined text-primary text-3xl">settings_input_component</span>
-              <span class="font-label text-[10px] bg-primary text-on-primary px-3 py-1 font-bold border border-primary/20 tracking-widest shadow-[4px_4px_0px_0px_rgba(0,229,255,0.2)]">EMBEDDED</span>
-            </div>
-            <h3 class="font-headline font-bold text-lg mb-2 uppercase">Aquatic Semi-Automatic Bot</h3>
-            <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Arduino-based prototype controlled wirelessly to collect surface garbage over water and transport it to land.</p>
-            <div class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all">Explore <span class="material-symbols-outlined text-xs">arrow_forward</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                  <div style="padding-left: 32px">
+                    <span style="color: #e6edf3">self.skills = [</span>
+                    <span style="color: #a5d6ff">"ML"</span>
+                    <span style="color: #e6edf3">, </span>
+                    <span style="color: #a5d6ff">"DL"</span>
+                    <span style="color: #e6edf3">, </span>
+                    <span style="color: #a5d6ff">"SW"</span>
+                    <span style="color: #e6edf3">]</span>
+                  </div>
 
-  <!-- QUOTE -->
-  <section class="py-24 px-8 lg:px-24 bg-surface-dim relative overflow-hidden">
-    <div class="absolute right-0 top-0 opacity-10 pointer-events-none translate-x-1/4">
-      <span class="material-symbols-outlined text-[400px]">format_quote</span>
-    </div>
-    <div class="max-w-4xl mx-auto relative z-10">
-      <div class="flex flex-col items-center text-center">
-        <span class="text-primary material-symbols-outlined text-4xl mb-8">terminal</span>
-        <blockquote class="font-headline text-3xl md:text-5xl font-light leading-tight tracking-tight italic text-on-surface mb-8">
-          "The art of engineering is the <span class="text-primary font-bold not-italic">management of complexity</span>."
-        </blockquote>
-        <cite class="font-label text-xs uppercase tracking-[0.4em] text-on-surface-variant not-italic border-t border-outline-variant/30 pt-4">Principles of System Architecture</cite>
-      </div>
-    </div>
-  </section>
-</main>
+                  <div style="padding-left: 32px">
+                    <span style="color: #e6edf3">self.passion = </span>
+                    <span style="color: #a5d6ff">"Mathematics"</span>
+                  </div>
 
-<!-- SHARED FOOTER -->
-<footer id="contact" class="bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10">
-  <div class="max-w-7xl mx-auto px-8">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-      <div class="flex flex-col gap-8 md:col-start-3 md:col-span-5">
-        <div class="text-2xl font-bold text-on-surface tracking-tighter font-headline uppercase">&lt;NABIL_SHAD /&gt;</div>
-        <div class="flex flex-col gap-5 pt-2">
-          <a class="flex items-center gap-4 group transition-all" href="https://github.com/gomiiie">
-            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
-              <i class="devicon-github-original text-xl opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all"></i>
-            </div>
-            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">github.com/gomiiie</span>
-          </a>
-          <a class="flex items-center gap-4 group transition-all" href="https://linkedin.com/in/grandoorlf">
-            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
-              <i class="devicon-linkedin-plain colored text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
-            </div>
-            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">linkedin.com/grandoorlf</span>
-          </a>
-          <a class="flex items-center gap-4 group transition-all" href="https://kaggle.com/gomiie">
-            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
-              <i class="devicon-kaggle-original colored text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
-            </div>
-            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">kaggle.com/gomiie</span>
-          </a>
-        </div>
-      </div>
-      <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pl-4">
-        <div class="space-y-4">
-          <h4 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary">Communication</h4>
-          <div class="space-y-3">
-            <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm" href="mailto:nyeowneko@gmail.com">
-              <span class="material-symbols-outlined text-sm">mail</span>
-              nyeowneko@gmail.com
-            </a>
-            <div class="flex items-center gap-3 text-on-surface-variant text-sm">
-              <span class="material-symbols-outlined text-sm">call</span>
-              +1 555-0123
+                  <br />
+
+                  <div style="padding-left: 16px">
+                    <span style="color: #ff7b72">def</span>
+                    <span style="color: #d2a8ff"> build</span>
+                    <span style="color: #e6edf3">(self):</span>
+                  </div>
+
+                  <div style="padding-left: 32px">
+                    <span style="color: #ff7b72">return </span>
+                    <span style="color: #e6edf3">self.code + self.data</span>
+                  </div>
+                </div>
+                <!-- End Code Block -->
+              </div>
             </div>
           </div>
         </div>
-        <div class="space-y-4">
-          <h4 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary">Location</h4>
-          <div class="flex items-start gap-3 text-on-surface-variant text-sm">
-            <span class="material-symbols-outlined text-sm">location_on</span>
-            <span>Dhaka, Bangladesh<br/><span class="text-[10px] opacity-60 uppercase">Active Worldwide</span></span>
+      </section>
+
+      <!-- TOOLBOX -->
+      <section
+        class="py-24 px-8 lg:px-24 bg-surface-container-low border-y border-outline-variant/10"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-12">
+            <h2
+              class="font-headline text-3xl font-bold tracking-tight uppercase"
+            >
+              Toolbox
+            </h2>
+            <div class="h-1 w-16 bg-primary mt-2"></div>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-outline-variant/20"
+          >
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <i
+                class="devicon-python-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"
+              ></i>
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >Python</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <i
+                class="devicon-cplusplus-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"
+              ></i>
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >C++</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <i
+                class="devicon-tensorflow-original text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"
+              ></i>
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >TensorFlow</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <i
+                class="devicon-pytorch-original text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"
+              ></i>
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >PyTorch</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <span
+                class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors"
+                >database</span
+              >
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >SQL</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <i
+                class="devicon-scikitlearn-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"
+              ></i>
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >SciKit Learn</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-8 flex flex-col items-center justify-center gap-4 group hover:bg-primary/10 transition-all cursor-default hover:-translate-y-2 hover:shadow-xl hover:z-10"
+            >
+              <i
+                class="devicon-pandas-plain text-5xl text-on-surface-variant group-hover:text-primary transition-all duration-300"
+              ></i>
+              <span
+                class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant group-hover:text-primary"
+                >Pandas</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section class="py-24 px-8 lg:px-24 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-12">
+            <h2
+              class="font-headline text-3xl font-bold tracking-tight uppercase"
+            >
+              Achievements
+            </h2>
+            <div class="h-1 w-16 bg-primary mt-2"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="bg-surface-container-low border border-outline-variant/10 p-0 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer"
+            >
+              <div class="h-48 overflow-hidden bg-surface-dim relative">
+                <img
+                  alt="USAMTS Medal"
+                  class="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-500"
+                  src="https://i.imgur.com/dbpheq7.jpeg"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-low/100 via-surface-container-low/10 to-transparent"
+                ></div>
+                <div
+                  class="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm px-2 py-1 border border-primary/30"
+                >
+                  <span
+                    class="font-label text-[10px] text-primary uppercase tracking-widest"
+                    >AWARDS</span
+                  >
+                </div>
+              </div>
+              <div class="p-6 pt-2">
+                <h3 class="font-headline font-bold text-lg mb-2 uppercase">
+                  Math olympiad FINALIST
+                </h3>
+                <div class="text-on-surface-variant text-sm mb-4">
+                  Qualified as a national-level finalist in the Bangladesh
+                  Mathematical Olympiad, competing among the country's top
+                  mathematics students.
+                </div>
+                <div
+                  class="text-primary font-label text-[10px] uppercase tracking-widest"
+                >
+                  National Level | March 2022
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border border-outline-variant/10 p-0 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer"
+            >
+              <div class="h-48 overflow-hidden bg-surface-dim relative">
+                <img
+                  alt="Math Competition Trophy"
+                  class="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-500"
+                  src="https://i.imgur.com/wgliLKG.png"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-low/10 via-surface-container-low/10 to-transparent"
+                ></div>
+                <div
+                  class="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm px-2 py-1 border border-primary/30"
+                >
+                  <span
+                    class="font-label text-[10px] text-primary uppercase tracking-widest"
+                    >COMPETITION</span
+                  >
+                </div>
+              </div>
+              <div class="p-6 pt-2">
+                <h3 class="font-headline font-bold text-lg mb-2 uppercase">
+                  DL Sprint 4.0 Finalist BUET
+                </h3>
+                <div class="text-on-surface-variant text-sm mb-4">
+                  Secured a <b><u>top 10%</u></b> ranking in the
+                  <b><u>finals</u></b> amongst 200 countrywide teams in BUET's
+                  Deep Learning competition. Our pipelines achieved
+                  <b><u>81%</u></b> and <b><u>88%</u></b> accuracy.
+                </div>
+                <div
+                  class="text-primary font-label text-[10px] uppercase tracking-widest"
+                >
+                  NATIONAL LEVEL | MARCH 2026
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border border-outline-variant/10 p-0 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer"
+            >
+              <div class="h-48 overflow-hidden bg-surface-dim relative">
+                <img
+                  alt="Seal of Achievement"
+                  class="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-500"
+                  src="https://i.imgur.com/UZoGkUv.png"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-container-low/100 via-surface-container-low/10 to-transparent"
+                ></div>
+                <div
+                  class="absolute top-4 right-4 bg-primary/20 backdrop-blur-sm px-2 py-1 border border-primary/30"
+                >
+                  <span
+                    class="font-label text-[10px] text-primary uppercase tracking-widest"
+                    >ACADEMIC</span
+                  >
+                </div>
+              </div>
+              <div class="p-6 pt-2">
+                <h3 class="font-headline font-bold text-lg mb-2 uppercase">
+                  Daily Star Award
+                </h3>
+                <div class="text-on-surface-variant text-sm mb-4">
+                  Recognized by The Daily Star for outstanding O Level (IGCSE)
+                  and A Level (IAL) examination results.
+                </div>
+                <div
+                  class="text-primary font-label text-[10px] uppercase tracking-widest"
+                >
+                  HIGHSCHOOL | OCTOBER 2022
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="py-24 px-8 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex justify-between items-end mb-12">
+            <div>
+              <h2
+                class="font-headline text-3xl font-bold tracking-tight uppercase"
+              >
+                Projects
+              </h2>
+              <div class="h-1 w-16 bg-primary mt-2"></div>
+            </div>
+            <a
+              href="projects.html"
+              class="font-label text-xs text-primary uppercase tracking-widest border-b border-primary pb-1 hover:opacity-70 transition-opacity"
+              >View Portfolio</a
+            >
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="bg-surface-container-low border border-outline-variant/10 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer duration-300"
+            >
+              <div
+                class="h-48 overflow-hidden transition-all duration-500 relative"
+              >
+                <img
+                  alt="Kernel OS Code"
+                  class="w-full h-full object-cover"
+                  src="https://i.imgur.com/gLRoQqc.png"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"
+                ></div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <span class="material-symbols-outlined text-primary text-3xl"
+                    >data_object</span
+                  >
+                  <span
+                    class="font-label text-[10px] bg-primary text-on-primary px-3 py-1 font-bold border border-primary/20 tracking-widest shadow-[4px_4px_0px_0px_rgba(0,229,255,0.2)]"
+                    >SOFTWARE</span
+                  >
+                </div>
+                <h3 class="font-headline font-bold text-lg mb-2 uppercase">
+                  Banking MANAGEMENT SYSTEM
+                </h3>
+                <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">
+                  B-kash banking system written in C# using .NET. Supports fund
+                  transfers, withdrawals, transactions history and service
+                  purchases.
+                </p>
+                <div
+                  class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all"
+                >
+                  Explore
+                  <span class="material-symbols-outlined text-xs"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border border-outline-variant/10 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer duration-300"
+            >
+              <div
+                class="h-48 overflow-hidden transition-all duration-500 relative"
+              >
+                <img
+                  alt="Computer Vision Neural Net"
+                  class="w-full h-full object-cover"
+                  src="https://i.imgur.com/UKgYVjN.png"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"
+                ></div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <span class="material-symbols-outlined text-primary text-3xl"
+                    >psychology</span
+                  >
+                  <span
+                    class="font-label text-[10px] bg-primary text-on-primary px-3 py-1 font-bold border border-primary/20 tracking-widest shadow-[4px_4px_0px_0px_rgba(0,229,255,0.2)]"
+                    >MACHINE LEARNING</span
+                  >
+                </div>
+                <h3 class="font-headline font-bold text-lg mb-2 uppercase">
+                  Bangla VOICE TRANSCRIPTIOn
+                </h3>
+                <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">
+                  Built a bangla voice transcription and diarization pipeline,
+                  achieving 81 and 88% accuracy, with 300% improvement in
+                  processing time.
+                </p>
+                <div
+                  class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all"
+                >
+                  Explore
+                  <span class="material-symbols-outlined text-xs"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low border border-outline-variant/10 group hover:border-primary/30 transition-all overflow-hidden flex flex-col hover:scale-[1.02] hover:shadow-2xl cursor-pointer duration-300"
+            >
+              <div
+                class="h-48 overflow-hidden transition-all duration-500 relative"
+              >
+                <img
+                  alt="FPGA Hardware Board"
+                  class="w-full h-full object-cover"
+                  src="https://i.imgur.com/J56TDLC.png"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"
+                ></div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <span class="material-symbols-outlined text-primary text-3xl"
+                    >settings_input_component</span
+                  >
+                  <span
+                    class="font-label text-[10px] bg-primary text-on-primary px-3 py-1 font-bold border border-primary/20 tracking-widest shadow-[4px_4px_0px_0px_rgba(0,229,255,0.2)]"
+                    >EMBEDDED</span
+                  >
+                </div>
+                <h3 class="font-headline font-bold text-lg mb-2 uppercase">
+                  Aquatic Semi-Automatic Bot
+                </h3>
+                <p class="text-on-surface-variant text-sm mb-6 line-clamp-2">
+                  Arduino-based prototype controlled wirelessly to collect
+                  surface garbage over water and transport it to land.
+                </p>
+                <div
+                  class="flex items-center gap-2 text-primary font-label text-[10px] uppercase tracking-wider group-hover:gap-4 transition-all"
+                >
+                  Explore
+                  <span class="material-symbols-outlined text-xs"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTE -->
+      <section
+        class="py-24 px-8 lg:px-24 bg-surface-dim relative overflow-hidden"
+      >
+        <div
+          class="absolute right-0 top-0 opacity-10 pointer-events-none translate-x-1/4"
+        >
+          <span class="material-symbols-outlined text-[400px]"
+            >format_quote</span
+          >
+        </div>
+        <div class="max-w-4xl mx-auto relative z-10">
+          <div class="flex flex-col items-center text-center">
+            <span class="text-primary material-symbols-outlined text-4xl mb-8"
+              >terminal</span
+            >
+            <blockquote
+              class="font-headline text-3xl md:text-5xl font-light leading-tight tracking-tight italic text-on-surface mb-8"
+            >
+              "The art of engineering is the
+              <span class="text-primary font-bold not-italic"
+                >management of complexity</span
+              >."
+            </blockquote>
+            <cite
+              class="font-label text-xs uppercase tracking-[0.4em] text-on-surface-variant not-italic border-t border-outline-variant/30 pt-4"
+              >Principles of System Architecture</cite
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SHARED FOOTER -->
+    <footer
+      id="contact"
+      class="bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10"
+    >
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div class="flex flex-col gap-8 md:col-start-3 md:col-span-5">
+            <div
+              class="text-2xl font-bold text-on-surface tracking-tighter font-headline uppercase"
+            >
+              &lt;NABIL_SHAD /&gt;
+            </div>
+            <div class="flex flex-col gap-5 pt-2">
+              <a
+                class="flex items-center gap-4 group transition-all"
+                href="https://github.com/gomiiie"
+              >
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors"
+                >
+                  <i
+                    class="devicon-github-original text-xl opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all"
+                  ></i>
+                </div>
+                <span
+                  class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors"
+                  >github.com/gomiiie</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-4 group transition-all"
+                href="https://linkedin.com/in/grandoorlf"
+              >
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors"
+                >
+                  <i
+                    class="devicon-linkedin-plain colored text-xl opacity-80 group-hover:opacity-100 transition-all"
+                  ></i>
+                </div>
+                <span
+                  class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors"
+                  >linkedin.com/grandoorlf</span
+                >
+              </a>
+              <a
+                class="flex items-center gap-4 group transition-all"
+                href="https://kaggle.com/gomiie"
+              >
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors"
+                >
+                  <i
+                    class="devicon-kaggle-original colored text-xl opacity-80 group-hover:opacity-100 transition-all"
+                  ></i>
+                </div>
+                <span
+                  class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors"
+                  >kaggle.com/gomiie</span
+                >
+              </a>
+            </div>
+          </div>
+          <div
+            class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pl-4"
+          >
+            <div class="space-y-4">
+              <h4
+                class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary"
+              >
+                Communication
+              </h4>
+              <div class="space-y-3">
+                <a
+                  class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm"
+                  href="mailto:nyeowneko@gmail.com"
+                >
+                  <span class="material-symbols-outlined text-sm">mail</span>
+                  nyeowneko@gmail.com
+                </a>
+                <div
+                  class="flex items-center gap-3 text-on-surface-variant text-sm"
+                >
+                  <span class="material-symbols-outlined text-sm">call</span>
+                  +1 555-0123
+                </div>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <h4
+                class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary"
+              >
+                Location
+              </h4>
+              <div
+                class="flex items-start gap-3 text-on-surface-variant text-sm"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >location_on</span
+                >
+                <span
+                  >Dhaka, Bangladesh<br /><span
+                    class="text-[10px] opacity-60 uppercase"
+                    >Active Worldwide</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant/20"
+        >
+          <div
+            class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant"
+          >
+            © 2024 NABIL SHAD RAHMAN. ALL RIGHTS RESERVED.
+          </div>
+          <div class="flex gap-6">
+            <a
+              class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Terms of Service</a
+            >
           </div>
         </div>
       </div>
-    </div>
-    <div class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant/20">
-      <div class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">© 2024 NABIL SHAD RAHMAN. ALL RIGHTS RESERVED.</div>
-      <div class="flex gap-6">
-        <a class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-        <a class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
-</body>
+    </footer>
+  </body>
 </html>
