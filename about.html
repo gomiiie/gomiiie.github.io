@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-dim": "#131313",
+          "on-primary-fixed-variant": "#004f58",
+          "on-secondary-fixed-variant": "#39485a",
+          "on-tertiary-fixed": "#251a00",
+          "secondary-fixed-dim": "#b9c8de",
+          "on-primary-fixed": "#001f24",
+          "inverse-primary": "#006875",
+          "inverse-surface": "#e5e2e1",
+          "tertiary-fixed": "#ffdf96",
+          "on-surface": "#e5e2e1",
+          "surface-bright": "#393939",
+          "outline-variant": "#3b494c",
+          "primary-container": "#00e5ff",
+          "surface-variant": "#353534",
+          "on-secondary": "#233143",
+          "on-primary": "#00363d",
+          "surface-container-highest": "#353534",
+          "surface-tint": "#00daf3",
+          "error": "#ffb4ab",
+          "primary-fixed": "#9cf0ff",
+          "on-background": "#e5e2e1",
+          "on-error": "#690005",
+          "on-tertiary": "#3e2e00",
+          "secondary-container": "#39485a",
+          "primary": "#c3f5ff",
+          "surface-container-low": "#1c1b1b",
+          "surface-container-lowest": "#0e0e0e",
+          "on-secondary-fixed": "#0d1c2d",
+          "inverse-on-surface": "#313030",
+          "on-primary-container": "#00626e",
+          "primary-fixed-dim": "#00daf3",
+          "surface-container": "#201f1f",
+          "tertiary-fixed-dim": "#f3bf26",
+          "on-secondary-container": "#a7b6cc",
+          "on-tertiary-container": "#6f5500",
+          "surface": "#131313",
+          "tertiary": "#ffeac0",
+          "secondary": "#b9c8de",
+          "outline": "#849396",
+          "on-error-container": "#ffdad6",
+          "background": "#131313",
+          "surface-container-high": "#2a2a2a",
+          "tertiary-container": "#fec931",
+          "error-container": "#93000a",
+          "secondary-fixed": "#d4e4fa",
+          "on-tertiary-fixed-variant": "#594400",
+          "on-surface-variant": "#bac9cc",
+        },
+        fontFamily: {
+          "headline": ["Space Grotesk"],
+          "body": ["Inter"],
+          "label": ["Space Grotesk"],
+        },
+        borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .blueprint-bg { background-image: radial-gradient(circle at 1px 1px, rgba(59,73,76,0.08) 1px, transparent 0); background-size: 24px 24px; }
+</style>
+<link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface font-body blueprint-bg selection:bg-primary/30">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+    <a href="index.html" class="text-xl font-bold text-[#e5e2e1] tracking-[-0.02em] font-['Space_Grotesk'] uppercase">&lt;NABIL_SHAD /&gt;</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95">Home</a>
+      <a href="projects.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95">Projects</a>
+      <a href="about.html" class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 transition-all hover:scale-105 active:scale-95">About Me</a>
+    </div>
+    <button class="bg-[#201f1f] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] hover:bg-[#353534] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]">Resume</button>
+  </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 pt-24 pb-32">
+
+  <!-- INTRO HERO -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-32">
+    <div class="lg:col-span-8">
+      <h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
+        The Architect<br/><span class="text-primary italic">Behind the Code</span>
+      </h1>
+      <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+        A Computer Science student bridging the gap between high-level abstraction and machine-level precision. I specialise in building robust systems where software meets hardware with mathematical elegance.
+      </p>
+    </div>
+    <div class="lg:col-span-4 flex justify-end">
+      <div class="w-full h-[400px] bg-surface-container relative overflow-hidden group">
+        <img alt="Coding portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxzxSEAbxtNTkc3RI-0ITEYrPW7qP1rylEnx4CRT19G4q0pHhjJkpURav5lADdImJbL-hbHQcOT1c1MboQMmi12Y-KYnwDCL7lDlQze7_gHFj-_Q2aGuVQ4aOy-I5b3JhnnbxJuvLf_pD_Q38FL4_XBuPd2hFIvO0ADYrsESESWHsxN8SyBl3WXvc-laBBoYy6a7Wk8wXuQywNvN3ybzYAWCGHZGpfS0yXP-eUAtqs3ZtedBm3MMmRXD7Y8DzF4E0CcVlR8u01WfY"/>
+        <div class="absolute bottom-4 left-4 font-label text-[10px] text-primary bg-background/80 px-2 py-1">NABIL_SHAD.jpg</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & EXPERIENCE CARDS -->
+  <div class="space-y-6 mb-32">
+
+    <!-- Card 1: BS in Computer Science -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-low border-l border-primary/30 min-h-[400px]">
+      <div class="p-10 flex flex-col justify-between lg:col-span-12">
+        <div>
+          <div class="flex justify-between items-start mb-12">
+            <div>
+              <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">BS in Computer Science</h2>
+              <p class="font-label text-primary tracking-tighter">BRAC UNIVERSITY, DHAKA</p>
+            </div>
+            <div class="text-right">
+              <p class="font-headline text-4xl md:text-5xl font-bold text-primary">2022–</p>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase">Ongoing</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12">
+            <div>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase mb-4 tracking-widest">Core Specialization</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Machine Learning & Deep Learning</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Data Structures & Algorithms</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Backend Development & Databases</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase mb-4 tracking-widest">Mathematical Foundation</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Discrete Mathematics</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Linear Algebra &amp; Calculus</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Statistics &amp; Probabilistic Modelling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 flex items-center gap-4 p-4 bg-surface-container-highest/50">
+          <span class="material-symbols-outlined text-primary">school</span>
+          <p class="text-xs text-on-surface-variant">Currently in 2nd year — pursuing specialisation in Statistical Modelling &amp; ML</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card 2: Academic Honors -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-low border-l border-primary/30 min-h-[400px]">
+      <div class="lg:col-span-8 p-10 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-12">
+            <div>
+              <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">Academic Honors</h2>
+              <p class="font-label text-primary tracking-tighter">DISTINCTION PROTOCOLS</p>
+            </div>
+            <div class="text-right">
+              <p class="font-headline text-4xl md:text-5xl font-bold text-primary">3+</p>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase">Awards</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12">
+            <div>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase mb-4 tracking-widest">Competitions</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>BdMO National Finalist (2022)</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>BUET DL Sprint 4.0 — Top 10% (2026)</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>81% &amp; 88% model accuracy achieved</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase mb-4 tracking-widest">Academic Awards</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Daily Star Award — O &amp; A Level (2022)</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Outstanding IGCSE &amp; IAL Results</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>National recognition by The Daily Star</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 flex items-center gap-4 p-4 bg-surface-container-highest/50">
+          <span class="material-symbols-outlined text-primary">military_tech</span>
+          <p class="text-xs text-on-surface-variant">Competing at national level since high school</p>
+        </div>
+      </div>
+      <div class="lg:col-span-4 bg-surface-container-highest/20 relative overflow-hidden flex items-center justify-center border-l border-outline-variant/10">
+        <div class="w-full h-full flex items-center justify-center p-8">
+          <div class="aspect-[2/3] w-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center relative group">
+            <span class="material-symbols-outlined text-primary/20 text-6xl group-hover:text-primary/40 transition-colors">workspace_premium</span>
+            <div class="absolute bottom-4 text-[10px] font-label text-on-surface-variant/40">ACHIEVEMENT_SLOT</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card 3: Experience -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-low border-l border-primary/30 min-h-[400px]">
+      <div class="lg:col-span-8 p-10 flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-12">
+            <div>
+              <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-2">Project Experience</h2>
+              <p class="font-label text-primary tracking-tighter">ENGINEERING PORTFOLIO</p>
+            </div>
+            <div class="text-right">
+              <p class="font-headline text-4xl md:text-5xl font-bold text-primary">04+</p>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase">Key Projects</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-12">
+            <div>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase mb-4 tracking-widest">Software &amp; ML</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Bangla Voice Transcription Pipeline</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Banking Management System (.NET)</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Predictive Stock Modeller (LSTM)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-label text-[10px] text-on-surface-variant uppercase mb-4 tracking-widest">Embedded Systems</p>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Aquatic Semi-Automatic Bot</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>Arduino Wireless Control Systems</li>
+                <li class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-primary flex-shrink-0"></div>IoT &amp; Sensor Integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 flex items-center gap-4 p-4 bg-surface-container-highest/50">
+          <span class="material-symbols-outlined text-primary">stars</span>
+          <p class="text-xs text-on-surface-variant">All projects built from scratch — no templates, no boilerplate</p>
+        </div>
+      </div>
+      <div class="lg:col-span-4 bg-surface-container-highest/20 relative overflow-hidden flex items-center justify-center border-l border-outline-variant/10">
+        <div class="w-full h-full flex items-center justify-center p-8">
+          <div class="aspect-[2/3] w-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center relative group">
+            <span class="material-symbols-outlined text-primary/20 text-6xl group-hover:text-primary/40 transition-colors">engineering</span>
+            <div class="absolute bottom-4 text-[10px] font-label text-on-surface-variant/40">PROJECT_TRACK_SLOT</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- RELEVANT COURSEWORK -->
+  <section class="mb-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-3 border-l-2 border-primary/20 pl-6 h-fit lg:sticky lg:top-32">
+        <h2 class="font-headline text-3xl font-bold tracking-tighter mb-4">Relevant Coursework</h2>
+        <p class="font-label text-xs text-primary uppercase tracking-widest mb-8">Academic Specializations</p>
+      </div>
+      <div class="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">CS2211</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Data Structure and Algorithms</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">CSC1205</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Object Oriented Programming</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">CSC4232</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Machine Learning</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">MAT3101</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Engineering Maths</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">CS2108</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Intro to Database</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">COE3104</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Microprocessor and Embedded Systems</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">EEE3101</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Digital Logic Circuits</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">CSC1202</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Discrete Maths</h3>
+        </div>
+        <div class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all">
+          <span class="font-label text-[10px] text-primary mb-2">MAT3103</span>
+          <h3 class="font-headline text-sm font-bold uppercase tracking-tight">Statistics</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE GOALS -->
+  <section class="bg-[#1c1b1b] p-12 relative overflow-hidden mb-32">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px]"></div>
+    <div class="relative z-10 max-w-4xl">
+      <h2 class="font-headline text-3xl font-bold mb-8">Future Goals</h2>
+      <ul class="space-y-4 text-on-surface-variant leading-relaxed">
+        <li class="flex items-start gap-4"><div class="mt-2.5 w-1.5 h-1.5 bg-primary flex-shrink-0"></div><span>Building production-grade ML systems that solve real-world problems at scale.</span></li>
+        <li class="flex items-start gap-4"><div class="mt-2.5 w-1.5 h-1.5 bg-primary flex-shrink-0"></div><span>Pursuing graduate research in Statistical Modelling or ML systems.</span></li>
+        <li class="flex items-start gap-4"><div class="mt-2.5 w-1.5 h-1.5 bg-primary flex-shrink-0"></div><span>Developing low-latency data pipelines for real-time, mission-critical applications.</span></li>
+        <li class="flex items-start gap-4"><div class="mt-2.5 w-1.5 h-1.5 bg-primary flex-shrink-0"></div><span>Contributing to open-source tooling that makes next-gen computing accessible and efficient.</span></li>
+      </ul>
+      <div class="mt-12 flex flex-wrap gap-12">
+        <div class="flex flex-col">
+          <span class="font-headline text-2xl font-bold text-on-surface">04+</span>
+          <span class="font-label text-[10px] uppercase text-primary tracking-widest">Projects Built</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline text-2xl font-bold text-on-surface">3</span>
+          <span class="font-label text-[10px] uppercase text-primary tracking-widest">National Awards</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline text-2xl font-bold text-on-surface">200+</span>
+          <span class="font-label text-[10px] uppercase text-primary tracking-widest">Teams Competed Against</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SHARED FOOTER -->
+<footer id="contact" class="bg-surface-container-lowest w-full py-16 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      <div class="flex flex-col gap-8 md:col-start-3 md:col-span-5">
+        <div class="text-2xl font-bold text-on-surface tracking-tighter font-headline uppercase">&lt;NABIL_SHAD /&gt;</div>
+        <div class="flex flex-col gap-5 pt-2">
+          <a class="flex items-center gap-4 group transition-all" href="https://github.com/gomiiie">
+            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
+              <i class="devicon-github-original text-xl opacity-80 group-hover:opacity-100 group-hover:text-primary transition-all"></i>
+            </div>
+            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">github.com/gomiiie</span>
+          </a>
+          <a class="flex items-center gap-4 group transition-all" href="https://linkedin.com/in/grandoorlf">
+            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
+              <i class="devicon-linkedin-plain colored text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+            </div>
+            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">linkedin.com/grandoorlf</span>
+          </a>
+          <a class="flex items-center gap-4 group transition-all" href="https://kaggle.com/gomiie">
+            <div class="w-8 h-8 flex items-center justify-center bg-surface-container rounded-sm border border-outline-variant/20 group-hover:border-primary/50 transition-colors">
+              <i class="devicon-kaggle-original colored text-xl opacity-80 group-hover:opacity-100 transition-all"></i>
+            </div>
+            <span class="font-label text-xs tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">kaggle.com/gomiie</span>
+          </a>
+        </div>
+      </div>
+      <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 md:pl-4">
+        <div class="space-y-4">
+          <h4 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary">Communication</h4>
+          <div class="space-y-3">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm" href="mailto:nyeowneko@gmail.com">
+              <span class="material-symbols-outlined text-sm">mail</span>
+              nyeowneko@gmail.com
+            </a>
+            <div class="flex items-center gap-3 text-on-surface-variant text-sm">
+              <span class="material-symbols-outlined text-sm">call</span>
+              +1 555-0123
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-primary">Location</h4>
+          <div class="flex items-start gap-3 text-on-surface-variant text-sm">
+            <span class="material-symbols-outlined text-sm">location_on</span>
+            <span>Dhaka, Bangladesh<br/><span class="text-[10px] opacity-60 uppercase">Active Worldwide</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 border-outline-variant/20">
+      <div class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">© 2024 NABIL SHAD RAHMAN. ALL RIGHTS RESERVED.</div>
+      <div class="flex gap-6">
+        <a class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+        <a class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
