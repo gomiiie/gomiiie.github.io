@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="dark" lang="en">
+<html class="light" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -20,53 +20,53 @@
         theme: {
           extend: {
             colors: {
-              "surface-dim": "#131313",
+              "surface-dim": "#dde4e6",
               "on-primary-fixed-variant": "#004f58",
               "on-secondary-fixed-variant": "#39485a",
               "on-tertiary-fixed": "#251a00",
               "secondary-fixed-dim": "#b9c8de",
               "on-primary-fixed": "#001f24",
-              "inverse-primary": "#006875",
-              "inverse-surface": "#e5e2e1",
+              "inverse-primary": "#00daf3",
+              "inverse-surface": "#2b3133",
               "tertiary-fixed": "#ffdf96",
-              "on-surface": "#e5e2e1",
-              "surface-bright": "#393939",
-              "outline-variant": "#3b494c",
-              "primary-container": "#00e5ff",
-              "surface-variant": "#353534",
-              "on-secondary": "#233143",
-              "on-primary": "#00363d",
-              "surface-container-highest": "#353534",
-              "surface-tint": "#00daf3",
-              error: "#ffb4ab",
-              "primary-fixed": "#9cf0ff",
-              "on-background": "#e5e2e1",
+              "on-surface": "#161d1e",
+              "surface-bright": "#f5fafb",
+              "outline-variant": "#bec8cb",
+              "primary-container": "#9ef0ff",
+              "surface-variant": "#dde4e6",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#dde4e6",
+              "surface-tint": "#006875",
+              error: "#ba1a1a",
+              "primary-fixed": "#9ef0ff",
+              "on-background": "#161d1e",
               "on-error": "#690005",
               "on-tertiary": "#3e2e00",
               "secondary-container": "#39485a",
-              primary: "#c3f5ff",
-              "surface-container-low": "#1c1b1b",
-              "surface-container-lowest": "#0e0e0e",
+              primary: "#006875",
+              "surface-container-low": "#eff5f6",
+              "surface-container-lowest": "#ffffff",
               "on-secondary-fixed": "#0d1c2d",
-              "inverse-on-surface": "#313030",
-              "on-primary-container": "#00626e",
-              "primary-fixed-dim": "#00daf3",
-              "surface-container": "#201f1f",
+              "inverse-on-surface": "#ecf2f4",
+              "on-primary-container": "#001f24",
+              "primary-fixed-dim": "#004f58",
+              "surface-container": "#e9f0f2",
               "tertiary-fixed-dim": "#f3bf26",
-              "on-secondary-container": "#a7b6cc",
+              "on-secondary-container": "#051f25",
               "on-tertiary-container": "#6f5500",
-              surface: "#131313",
+              surface: "#f5fafb",
               tertiary: "#ffeac0",
               secondary: "#b9c8de",
               outline: "#849396",
               "on-error-container": "#ffdad6",
-              background: "#131313",
-              "surface-container-high": "#2a2a2a",
+              background: "#f5fafb",
+              "surface-container-high": "#e3ebed",
               "tertiary-container": "#fec931",
               "error-container": "#93000a",
               "secondary-fixed": "#d4e4fa",
               "on-tertiary-fixed-variant": "#594400",
-              "on-surface-variant": "#bac9cc",
+              "on-surface-variant": "#3f4f52",
             },
             fontFamily: {
               headline: ["Space Grotesk"],
@@ -94,7 +94,7 @@
       .blueprint-bg {
         background-image: radial-gradient(
           circle at 1px 1px,
-          rgba(59, 73, 76, 0.08) 1px,
+          rgba(111, 127, 131, 0.10) 1px,
           transparent 0
         );
         background-size: 24px 24px;
@@ -109,36 +109,36 @@
     class="bg-background text-on-surface font-body blueprint-bg selection:bg-primary/30"
   >
     <!-- NAV -->
-    <nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+    <nav class="fixed top-0 w-full z-50 bg-[#f5fafb]/70 backdrop-blur-xl border-b border-[#bec8cb]/30">
       <div
         class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto"
       >
         <a
           href="index.html"
-          class="text-xl font-bold text-[#e5e2e1] tracking-[-0.02em] font-['Space_Grotesk'] uppercase"
+          class="text-xl font-bold text-[#161d1e] tracking-[-0.02em] font-['Space_Grotesk'] uppercase"
           >&lt;NABIL_SHAD /&gt;</a
         >
         <div class="hidden md:flex items-center gap-8">
           <a
             href="index.html"
-            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#3f4f52] hover:text-[#161d1e] transition-colors hover:scale-105 active:scale-95"
             >Home</a
           >
           <a
             href="projects.html"
-            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#bac9cc] hover:text-[#e5e2e1] transition-colors hover:scale-105 active:scale-95"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#3f4f52] hover:text-[#161d1e] transition-colors hover:scale-105 active:scale-95"
             >Projects</a
           >
           <a
             href="about.html"
-            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 transition-all hover:scale-105 active:scale-95"
+            class="font-['Space_Grotesk'] uppercase tracking-tighter text-[#006875] border-b-2 border-[#006875] pb-1 transition-all hover:scale-105 active:scale-95"
             >About Me</a
           >
         </div>
         <a
           href="https://drive.google.com/file/d/1cS3d3Qj-AsOxDF2Na4AmalvK0RBrsgmB/view?usp=sharing"
           target="_blank"
-          class="inline-block bg-[#201f1f] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#c3f5ff] hover:bg-[#353534] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,229,255,0.2)]"
+          class="inline-block bg-[#e9f0f2] px-6 py-2 text-sm font-['Space_Grotesk'] uppercase tracking-tighter text-[#006875] hover:bg-[#dde4e6] transition-all duration-200 active:scale-95 hover:shadow-[0_0_15px_rgba(0,104,117,0.15)]"
         >
           Resume
         </a>
@@ -183,7 +183,7 @@
       <div class="space-y-6 mb-32">
         <!-- Card 1: BS in Computer Science -->
         <section
-          class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-low border-l border-primary/30 min-h-[20px]"
+          class="grid grid-cols-1 lg:grid-cols-12 bg-white border-l-4 border-primary min-h-[20px] shadow-sm ring-1 ring-[#bec8cb]/60"
         >
           <div class="p-10 flex flex-col justify-between lg:col-span-12">
             <div>
@@ -214,7 +214,7 @@
               </div>
             </div>
             <div
-              class="mt-12 flex items-center gap-4 p-4 bg-surface-container-highest/50"
+              class="mt-12 flex items-center gap-4 p-4 bg-[#e3ebed]"
             >
               <span class="material-symbols-outlined text-primary">school</span>
               <p class="text-xs text-on-surface-variant">
@@ -226,7 +226,7 @@
 
         <!-- Card 2: Academic Honors -->
         <section
-          class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-low border-l border-primary/30 min-h-[400px]"
+          class="grid grid-cols-1 lg:grid-cols-12 bg-white border-l-4 border-primary min-h-[400px] shadow-sm ring-1 ring-[#bec8cb]/60"
         >
           <div class="lg:col-span-8 p-10 flex flex-col justify-between">
             <div>
@@ -296,7 +296,7 @@
               </div>
             </div>
             <div
-              class="mt-12 flex items-center gap-4 p-4 bg-surface-container-highest/50"
+              class="mt-12 flex items-center gap-4 p-4 bg-[#e3ebed]"
             >
               <span class="material-symbols-outlined text-primary"
                 >military_tech</span
@@ -307,7 +307,7 @@
             </div>
           </div>
           <div
-            class="lg:col-span-4 bg-surface-container-highest/20 relative overflow-hidden flex items-center justify-center border-l border-outline-variant/10"
+            class="lg:col-span-4 bg-[#e9f0f2] relative overflow-hidden flex items-center justify-center border-l border-[#bec8cb]/40"
           >
             <div class="w-full h-full flex items-center justify-center p-8">
               <div
@@ -328,7 +328,7 @@
 
         <!-- Card 3: Experience -->
         <section
-          class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container-low border-l border-primary/30 min-h-[400px]"
+          class="grid grid-cols-1 lg:grid-cols-12 bg-white border-l-4 border-primary min-h-[400px] shadow-sm ring-1 ring-[#bec8cb]/60"
         >
           <div class="lg:col-span-8 p-10 flex flex-col justify-between">
             <div>
@@ -396,7 +396,7 @@
             </div>
           </div>
           <div
-            class="lg:col-span-4 bg-surface-container-highest/20 relative overflow-hidden flex items-center justify-center border-l border-outline-variant/10"
+            class="lg:col-span-4 bg-[#e9f0f2] relative overflow-hidden flex items-center justify-center border-l border-[#bec8cb]/40"
           >
             <div class="w-full h-full flex items-center justify-center p-8">
               <div
@@ -433,7 +433,7 @@
           </div>
           <div class="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >CS2211</span
@@ -445,7 +445,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >CSC1205</span
@@ -457,7 +457,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >CSC4232</span
@@ -469,7 +469,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >MAT3101</span
@@ -481,7 +481,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >CS2108</span
@@ -493,7 +493,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >COE3104</span
@@ -505,7 +505,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >EEE3101</span
@@ -517,7 +517,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >CSC1202</span
@@ -529,7 +529,7 @@
               </h3>
             </div>
             <div
-              class="bg-surface-container-low border border-outline-variant/20 p-6 flex flex-col justify-between group hover:border-primary/40 transition-all"
+              class="bg-white border border-[#bec8cb] p-6 flex flex-col justify-between group hover:border-primary hover:shadow-md transition-all shadow-sm"
             >
               <span class="font-label text-[10px] text-primary mb-2"
                 >MAT3103</span
@@ -545,7 +545,7 @@
       </section>
 
       <!-- FUTURE GOALS -->
-      <section class="bg-[#1c1b1b] p-12 relative overflow-hidden mb-32">
+      <section class="bg-[#e3ebed] p-12 relative overflow-hidden mb-32 border border-[#bec8cb]/60">
         <div
           class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px]"
         ></div>
@@ -676,12 +676,9 @@
                 Communication
               </h4>
               <div class="space-y-3">
-                <a
-                  class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm"
-                  href="mailto:nyeowneko@gmail.com"
-                >
+                <a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors text-sm" href="/cdn-cgi/l/email-protection#0c627569637b626967634c6b616d6560226f6361">
                   <span class="material-symbols-outlined text-sm">mail</span>
-                  nyeowneko@gmail.com
+                  <span class="__cf_email__" data-cfemail="a9c7d0ccc6dec7ccc2c6e9cec4c8c0c587cac6c4">[email&#160;protected]</span>
                 </a>
                 <div
                   class="flex items-center gap-3 text-on-surface-variant text-sm"
@@ -730,10 +727,4 @@
               class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors"
               href="#"
               >Terms of Service</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+         
